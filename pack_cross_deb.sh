@@ -10,13 +10,13 @@ echo "
 #     #  ####   ####    #   #    # #    #  ####     #    #     #
 "
 
-DEB_NAME="ThemePro"
-DEB_VERSION="1.1.9"
+DEB_NAME="YourDebName"
+DEB_VERSION="1.0.0"
 DEB_AUTHOR="MustangYM"
-DEB_DES="由ThemePro团队开发,用于加载微信美化主题, 禁止任何商业用途"
+DEB_DES="Be a hero"
 DEB_ARCHITECTURE="iphoneos-arm"
-TARGET_PROCESS="WeChat" # 微信的进程名
-TARGET_BUNDLE=("com.tencent.xin.sharetimeline" "com.tencent.xin") # 微信的 Bundle ID
+TARGET_PROCESS="YourProcessName" 
+TARGET_BUNDLE=("YourProcessId")
 
 SAFE_GUARD(){
     if [ $? -ne 0 ]
