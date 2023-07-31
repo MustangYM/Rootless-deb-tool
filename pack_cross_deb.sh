@@ -11,12 +11,20 @@ echo "
 "
 
 DEB_NAME="YourDebName"
-DEB_VERSION="1.0.0"
 DEB_AUTHOR="MustangYM"
 DEB_DES="Be a hero"
 DEB_ARCHITECTURE="iphoneos-arm" ### you don`t need config this value, cause its auto change to arm64 in rootless
 TARGET_PROCESS="YourProcessName" 
 TARGET_BUNDLE=("YourProcessId")
+
+echo "Enter the version of the DEB package (e.g., 1.0.0)
+Version:"
+read DEB_VERSION
+
+if [[ ! "$DEB_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+  echo "Invalid format for version number. It should be like '1.0.0'"
+  exit 1
+fi
 
 SAFE_GUARD(){
     if [ $? -ne 0 ]
