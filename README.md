@@ -6,6 +6,18 @@ A cross-platform `Jailbreak` deb packaging tool includes `Fugu15` `rootless` deb
 
 <img src="https://github.com/MustangYM/Rootless-deb-tool/assets/21478687/24250cb1-f913-4378-ae2a-2d9b613db370" width="300px"/>
 
+### Config
+Config your deb in pack_cross_deb.sh
+```
+DEB_NAME="YourDebName"
+DEB_VERSION="1.0.0"
+DEB_AUTHOR="MustangYM"
+DEB_DES="Be a hero"
+DEB_ARCHITECTURE="iphoneos-arm"
+TARGET_PROCESS="YourProcessName" 
+TARGET_BUNDLE=("YourProcessId")
+```
+
 ### permission
 ```
 chmod +x pack_cross_deb.sh
