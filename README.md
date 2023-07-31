@@ -48,7 +48,7 @@ dpkg-deb: 正在 '/Users/mustangym/Rootless-deb-tool/ThemePro_1.1.9_iphoneos-arm
 🍻: 🍻🍻🍻🍻🍻🍻Success🍻🍻🍻🍻🍻🍻
 ```
 ### Product
-<img src="https://github.com/MustangYM/Rootless-deb-tool/assets/21478687/30c835c4-d269-47cd-86aa-dd3255d2cc18" width="300px"/>
+<img src="https://github.com/MustangYM/Rootless-deb-tool/assets/21478687/30c835c4-d269-47cd-86aa-dd3255d2cc18" width="600px"/>
 
 ### Base on
 [v2.1.5-procursus7](https://github.com/ProcursusTeam/ldid/releases/tag/v2.1.5-procursus7)
