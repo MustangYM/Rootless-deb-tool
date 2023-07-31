@@ -31,6 +31,12 @@ Will automatically iterate through dylib in the current directory and then deter
 ```
 ./pack_cross_deb.sh
 ```
+Enter your deb version
+```
+Enter the version of the DEB package (e.g., 1.0.0)
+Version:
+1.1.0
+```
 ### Success
 Be careful to check if there is a ❌ log, if there is, it must have failed, even if the log shows success.
 ```
