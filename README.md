@@ -37,7 +37,7 @@ Version:
 1.1.0
 ```
 ### Success
-Be careful to check if there is a ❌ log, if there is, it must have failed, even if the log shows success.
+~~Be careful to check if there is a ❌ log, if there is, it must have failed, even if the log shows success.~~
 ```
 mustangym@MustangYMdeMacBook-Pro Rootless-deb-tool % /Users/mustangym/Rootless-deb-tool/pack_cross_deb.sh
 
