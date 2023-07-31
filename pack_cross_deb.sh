@@ -127,7 +127,7 @@ EOF
             ;;
         esac
 
-        LDID="ldid_${OS_TYPE}_${ARCH_TYPE} -Hsha256"
+        LDID="./ldid_${OS_TYPE}_${ARCH_TYPE} -Hsha256"
         chmod +x ldid_${OS_TYPE}_${ARCH_TYPE}
         SAFE_GUARD "Failed to change permissions for ldid_${OS_TYPE}_${ARCH_TYPE}" "Change permissions for ldid_${OS_TYPE}_${ARCH_TYPE}"
 
