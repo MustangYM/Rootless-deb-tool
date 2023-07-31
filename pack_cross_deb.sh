@@ -9,6 +9,7 @@ echo "
 #     # #    # #    #   #   #    # #   ## #    #    #    #     #
 #     #  ####   ####    #   #    # #    #  ####     #    #     #
 "
+set -e
 
 DEB_NAME="YourDebName"
 DEB_AUTHOR="MustangYM"
@@ -27,10 +28,11 @@ if [[ ! "$DEB_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
 fi
 
 SAFE_GUARD(){
-    if [ $? -ne 0 ]
+    local exit_code=$?
+    if [ $exit_code -ne 0 ]
     then
         echo "❌: $1"
-        exit 1
+        exit $exit_code
     else
 		if [ "$2" ] 
     	then
@@ -182,8 +184,7 @@ EOF
                 fi
                 install_name_tool -add_rpath "/usr/lib" "$file"
                 install_name_tool -add_rpath "/var/jb/usr/lib" "$file"
-                $LDID -s "$file"
-                SAFE_GUARD "Failed to sign $file with ldid" "Sign $file with ldid"
+                $LDID -s "$file" || SAFE_GUARD "Failed to sign $file with ldid" "Sign $file with ldid"
             fi
         done
 
