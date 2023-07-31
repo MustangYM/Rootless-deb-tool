@@ -14,7 +14,7 @@ DEB_NAME="YourDebName"
 DEB_VERSION="1.0.0"
 DEB_AUTHOR="MustangYM"
 DEB_DES="Be a hero"
-DEB_ARCHITECTURE="iphoneos-arm"
+DEB_ARCHITECTURE="iphoneos-arm" ### you don`t need config this value, cause its auto change to arm64 in rootless
 TARGET_PROCESS="YourProcessName" 
 TARGET_BUNDLE=("YourProcessId")
 
