@@ -2,7 +2,7 @@
 A cross-platform `Jailbreak` deb packaging tool includes `Fugu15` `rootless` deb，for linux_aarch64、linux_x86_64、macosx_x86_64、macosx_arm64.
 
 ## Introduction
-Please make sure that your device has installed `dpkg-deb`、`file`、`otool`、`install_name_tool`，Usually you just need to install `dpkg-deb` on a mac, you can use `brew install`.
+Please make sure that your device has installed `dpkg-deb`、`file`、`otool`、`install_name_tool`，Usually you just need to install `dpkg-deb` on mac, you can use `brew install`.
 
 ## Usage
  You just need to put your `demo.dylib` in the `same folder` as `pack_cross_deb.sh`
