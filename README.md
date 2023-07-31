@@ -5,12 +5,12 @@ A cross-platform `Jailbreak` deb packaging tool includes `Fugu15` `rootless` deb
 Please make sure that your device has installed `dpkg-deb`、`file`、`otool`、`install_name_tool`，Usually you just need to install `dpkg-deb` on a mac, you can use `brew install`.
 
 ## Usage
-### You just need to put your demo.dylib in the same folder as pack_cross_deb.sh
+ You just need to put your `demo.dylib` in the `same folder` as `pack_cross_deb.sh`
 
 <img src="https://github.com/MustangYM/Rootless-deb-tool/assets/21478687/24250cb1-f913-4378-ae2a-2d9b613db370" width="300px"/>
 
 ### Config
-Config your deb in pack_cross_deb.sh
+Config your deb in `pack_cross_deb.sh`
 ```
 DEB_NAME="YourDebName"
 DEB_VERSION="1.0.0"
@@ -27,7 +27,7 @@ chmod +x pack_cross_deb.sh
 ```
 
 ### Fire
-Will automatically iterate through dylib in the current directory and then determine your platform to call the matching ldid to sign.
+Will automatically iterate through dylib in the current directory and then determine your platform to call the matching ldid to `sign`.
 ```
 ./pack_cross_deb.sh
 ```
