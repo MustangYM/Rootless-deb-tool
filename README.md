@@ -13,7 +13,6 @@ Please make sure that your device has installed `dpkg-deb`、`file`、`otool`、
 Config your deb in `pack_cross_deb.sh`
 ```
 DEB_NAME="YourDebName"
-DEB_VERSION="1.0.0"
 DEB_AUTHOR="MustangYM"
 DEB_DES="Be a hero"
 DEB_ARCHITECTURE="iphoneos-arm"
