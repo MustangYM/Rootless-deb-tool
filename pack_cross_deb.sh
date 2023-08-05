@@ -203,7 +203,7 @@ EOF
         done
 
         PACKAGE_FULLNAME="$(pwd)"/"$(grep Package: "$TEMPDIR_NEW"/DEBIAN/control | cut -f2 -d ' ')"-"$(grep Architecture: "$TEMPDIR_NEW"/DEBIAN/control | cut -f2 -d ' ')"
-        dpkg-deb -b "$TEMPDIR_NEW" ${PACKAGE_FULLNAME}_Rootless.deb
+        sudo dpkg-deb -b "$TEMPDIR_NEW" ${PACKAGE_FULLNAME}_Rootless.deb
 
         rm -rf "$TEMPDIR_OLD" "$TEMPDIR_NEW"
         rm -rf ${PACKAGE_FULLNAME} 
