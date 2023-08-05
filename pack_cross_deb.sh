@@ -11,7 +11,7 @@ echo "
 "
 set -e
 
-DEB_NAME="YourDebName"
+DEB_BASE_NAME="YourDebName"
 DEB_AUTHOR="MustangYM"
 DEB_DES="Be a hero"
 DEB_ARCHITECTURE="iphoneos-arm" ### you don`t need config this value, cause its auto change to arm64 in rootless
@@ -26,6 +26,8 @@ if [[ ! "$DEB_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
   echo "Invalid format for version number. It should be like '1.0.0'"
   exit 1
 fi
+
+DEB_NAME="${DEB_BASE_NAME}-${DEB_VERSION}"
 
 SAFE_GUARD(){
     local exit_code=$?
@@ -94,8 +96,8 @@ Name: ${DEB_NAME}
 Author: ${DEB_AUTHOR}
 EOF
         SAFE_GUARD "Failed to create control file for $dylib"
-
-        dpkg-deb -b debpack ${DEB_NAME}_${DEB_VERSION}_${DEB_ARCHITECTURE}.deb
+        
+        dpkg-deb -b debpack ${DEB_NAME}-${DEB_ARCHITECTURE}.deb
         SAFE_GUARD "Failed to create deb package for $dylib"
 
         rm -rf debpack
@@ -141,10 +143,15 @@ EOF
         chmod +x ldid_${OS_TYPE}_${ARCH_TYPE}
         SAFE_GUARD "Failed to change permissions for ldid_${OS_TYPE}_${ARCH_TYPE}" "Change permissions for ldid_${OS_TYPE}_${ARCH_TYPE}"
 
-        DEB_FILE=${DEB_NAME}_${DEB_VERSION}_${DEB_ARCHITECTURE}.deb
+        DEB_FILE="${DEB_NAME}-${DEB_ARCHITECTURE}.deb"
+        echo "创建的DEB文件名称: $DEB_FILE"
         TEMPDIR_OLD="$(mktemp -d)"
         TEMPDIR_NEW="$(mktemp -d)"
 
+        if [[ ! -f $DEB_FILE ]]; then
+          echo "文件$DEB_FILE不存在"
+          exit 1
+        fi
         dpkg-deb -R "$DEB_FILE" "$TEMPDIR_OLD"
         SAFE_GUARD "Failed to extract $DEB_FILE to $TEMPDIR_OLD"
 
@@ -156,8 +163,15 @@ EOF
 
         mkdir -p "$TEMPDIR_NEW"/var/jb
         cp -a "$TEMPDIR_OLD"/DEBIAN "$TEMPDIR_NEW"
-        sed 's|iphoneos-arm|iphoneos-arm64|' < "$TEMPDIR_OLD"/DEBIAN/control > "$TEMPDIR_NEW"/DEBIAN/control
-        SAFE_GUARD "Failed to replace iphoneos-arm with iphoneos-arm64 in $TEMPDIR_OLD/DEBIAN/control and write to $TEMPDIR_NEW/DEBIAN/control" "Replace iphoneos-arm with iphoneos-arm64"
+        # Modify control to arm64
+        sed 's|iphoneos-arm|iphoneos-arm64|' < "$TEMPDIR_OLD"/DEBIAN/control > "$TEMPDIR_NEW"/DEBIAN/control.temp
+        SAFE_GUARD "Failed to replace iphoneos-arm with iphoneos-arm64 in $TEMPDIR_OLD/DEBIAN/control" "Replaced iphoneos-arm with iphoneos-arm64"
+
+        # Modify control Name to xxx-Rootless
+        sed 's|^\(Name: .*\)$|\1-Rootless|' "$TEMPDIR_NEW"/DEBIAN/control.temp > "$TEMPDIR_NEW"/DEBIAN/control
+        rm "$TEMPDIR_NEW"/DEBIAN/control.temp
+        SAFE_GUARD "Failed to append -Rootless to Name in $TEMPDIR_NEW/DEBIAN/control" "Appended -Rootless to Name"
+
 
         rm -rf "$TEMPDIR_OLD"/DEBIAN
         mv -f "$TEMPDIR_OLD"/.* "$TEMPDIR_OLD"/* "$TEMPDIR_NEW"/var/jb >/dev/null 2>&1 || true
@@ -188,8 +202,8 @@ EOF
             fi
         done
 
-        PACKAGE_FULLNAME="$(pwd)"/"$(grep Package: "$TEMPDIR_NEW"/DEBIAN/control | cut -f2 -d ' ')"_"$(grep Version: "$TEMPDIR_NEW"/DEBIAN/control | cut -f2 -d ' ')"_"$(grep Architecture: "$TEMPDIR_NEW"/DEBIAN/control | cut -f2 -d ' ')"
-        sudo dpkg-deb -b "$TEMPDIR_NEW" ${PACKAGE_FULLNAME}_rootless.deb
+        PACKAGE_FULLNAME="$(pwd)"/"$(grep Package: "$TEMPDIR_NEW"/DEBIAN/control | cut -f2 -d ' ')"-"$(grep Architecture: "$TEMPDIR_NEW"/DEBIAN/control | cut -f2 -d ' ')"
+        dpkg-deb -b "$TEMPDIR_NEW" ${PACKAGE_FULLNAME}_Rootless.deb
 
         rm -rf "$TEMPDIR_OLD" "$TEMPDIR_NEW"
         rm -rf ${PACKAGE_FULLNAME} 
