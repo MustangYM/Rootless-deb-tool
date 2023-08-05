@@ -80,14 +80,14 @@ EOF
     SAFE_GUARD "Failed to create plist file for $dylib"
 
         cat <<EOF > debpack/DEBIAN/control
-Package: ${DEB_NAME}
+Package: ${DEB_BASE_NAME}
 Version: ${DEB_VERSION}
 Section: custom
 Priority: optional
 Architecture: ${DEB_ARCHITECTURE}
-Replaces: ${DEB_NAME}
-Provides: ${DEB_NAME}
-Conflicts: ${DEB_NAME}
+Replaces: ${DEB_BASE_NAME}
+Provides: ${DEB_BASE_NAME}
+Conflicts: ${DEB_BASE_NAME}
 Essential: no
 Maintainer: ${DEB_AUTHOR} <MustangYM@yeah.net>
 Depends: mobilesubstrate
