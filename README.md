@@ -50,22 +50,22 @@ mustangym@MustangYMdeMacBook-Pro Rootless-deb-tool % /Users/mustangym/Rootless-d
 #     # #    # #    #   #   #    # #   ## #    #    #    #     #
 #     #  ####   ####    #   #    # #    #  ####     #    #     #
 
-Processing libPineappleDylib.dylib
-dpkg-deb: 正在 'ThemePro_1.1.9_iphoneos-arm.deb' 中构建软件包 'themepro'。
+Processing YourDebName.dylib
+dpkg-deb: 正在 'YourDebName_1.1.9_iphoneos-arm.deb' 中构建软件包 'YourDebName'。
 🍻: Change permissions for ldid_macosx_arm64
 🍻: Change permissions for /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.UlbSrt0T/DEBIAN/*
 🍻: Change permissions for /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.UlbSrt0T/DEBIAN/control
 🍻: Replace iphoneos-arm with iphoneos-arm64
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib
-🍻: Sign /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/libPineappleDylib.dylib with ldid
-dpkg-deb: 正在 '/Users/mustangym/Rootless-deb-tool/ThemePro_1.1.9_iphoneos-arm64_rootless.deb' 中构建软件包 'themepro'。
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/install_name_tool: warning: changes being made to the file will invalidate the code signature in: /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib
+🍻: Sign /var/folders/2b/y1cj1s594q74p_qf_8n0v9hw0000gn/T/tmp.Dt0gaxSY/var/jb/usr/lib/TweakInject/YourDebName.dylib with ldid
+dpkg-deb: 正在 '/Users/mustangym/Rootless-deb-tool/YourDebName_1.1.9_iphoneos-arm64_rootless.deb' 中构建软件包 'YourDebName'。
 🍻: 🍻🍻🍻🍻🍻🍻Success🍻🍻🍻🍻🍻🍻
 ```
 ### Product
